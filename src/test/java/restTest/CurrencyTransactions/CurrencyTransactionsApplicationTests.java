@@ -50,11 +50,11 @@ class CurrencyTransactionsApplicationTests {
     @DisplayName("Проверка получения записи по обменному курсу в определенный день")
     void checkGetInInExchangeRateController() throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders
-                .get("/exrate/14112023")
+                .get("/exrate/EUR/15112023")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.date").value("2023-11-13T21:00:00.000+00:00"));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.date").value("2023-11-14T21:00:00.000+00:00"));
     }
 
     @Test
